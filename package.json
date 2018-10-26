@@ -1,0 +1,39 @@
+{
+  "name": "NodeGraphQLBoilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "apollo-errors": "^1.9.0",
+    "apollo-resolvers": "^1.4.1",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "express": "^4.16.4",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "graphql-type-json": "^0.2.1",
+    "helmet": "^3.14.0",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.3"
+  },
+  "lint-staged": {
+    "src/**/*.{js,json}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "local": "NODE_ENV=local nodemon src/app.js --trace-sync-io"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
